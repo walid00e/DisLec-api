@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RunManager">
+    <configuration default="true" type="NodeJSConfigurationType">
+      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSProfilingRunConfigurationExtension">
+        <profiling log-folder="C:\Program Files\JetBrains\WebStorm 2023.3.3\jbr\bin\." />
+      </EXTENSION>
+      <method v="2" />
+    </configuration>
+  </component>
+</project>
