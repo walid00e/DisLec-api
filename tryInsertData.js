@@ -65,6 +65,7 @@ const ranksData = [
     {
         name: "Rank 1",
         description: "Beginner level",
+        img: "/path/to/img",
         exercises: [
             { name: "Exercise 1", type: "Cardio", duration: 30, date: new Date() },
             { name: "Exercise 2", type: "Strength", duration: 45, date: new Date() }
@@ -73,6 +74,7 @@ const ranksData = [
     {
         name: "Rank 2",
         description: "Intermediate level",
+        img: "/path/to/img",
         exercises: [
             { name: "Exercise 3", type: "Flexibility", duration: 20, date: new Date() },
             { name: "Exercise 4", type: "Endurance", duration: 60, date: new Date() }
@@ -81,6 +83,7 @@ const ranksData = [
     {
         name: "Rank 3",
         description: "Advanced level",
+        img: "/path/to/img",
         exercises: [
             { name: "Exercise 5", type: "Agility", duration: 40, date: new Date() },
             { name: "Exercise 6", type: "Power", duration: 55, date: new Date() }
@@ -89,6 +92,7 @@ const ranksData = [
     {
         name: "Rank 4",
         description: "Expert level",
+        img: "/path/to/img",
         exercises: [
             { name: "Exercise 7", type: "Balance", duration: 25, date: new Date() },
             { name: "Exercise 8", type: "Coordination", duration: 50, date: new Date() }
@@ -97,6 +101,7 @@ const ranksData = [
     {
         name: "Rank 5",
         description: "Master level",
+        img: "/path/to/img",
         exercises: [
             { name: "Exercise 9", type: "Core", duration: 35, date: new Date() },
             { name: "Exercise 10", type: "Plyometrics", duration: 70, date: new Date() }
@@ -105,6 +110,7 @@ const ranksData = [
     {
         name: "Rank 6",
         description: "Elite level",
+        img: "/path/to/img",
         exercises: [
             { name: "Exercise 11", type: "Speed", duration: 45, date: new Date() },
             { name: "Exercise 12", type: "Accuracy", duration: 60, date: new Date() }
@@ -113,6 +119,7 @@ const ranksData = [
     {
         name: "Rank 7",
         description: "Champion level",
+        img: "/path/to/img",
         exercises: [
             { name: "Exercise 13", type: "Recovery", duration: 20, date: new Date() },
             { name: "Exercise 14", type: "Mental", duration: 45, date: new Date() }
@@ -121,6 +128,7 @@ const ranksData = [
     {
         name: "Rank 8",
         description: "Legendary level",
+        img: "/path/to/img",
         exercises: [
             { name: "Exercise 15", type: "Explosiveness", duration: 30, date: new Date() },
             { name: "Exercise 16", type: "Focus", duration: 60, date: new Date() }
@@ -200,7 +208,7 @@ mongoose.connect('mongodb://localhost:27017/TALKEASE', { useNewUrlParser: true, 
     .then(() => {
         console.log('Connected to MongoDB');
         // Insert sample users into the database
-        return Student.insertMany(studentsData);
+        return Rank.insertMany(ranksData);
     })
     .then(() => {
         console.log('Sample users inserted successfully');
