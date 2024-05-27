@@ -138,68 +138,44 @@ const ranksData = [
 
 const studentsData = [
     {
-        userId: "665212b08826ea28ba424ea7",
+        user: "665212b08826ea28ba424ea7",
         rank: "6652151aec3ddb58a17e3675",
-        finishedExercises: 15,
-        hoursSpent: 60,
+        finishedExercises: 159,
+        hoursSpent: 24,
         exercisesFocus: {
             exercisesData: [
                 { exerciseType: "Cardio", exerciseValue: 30 },
-                { exerciseType: "Strength", exerciseValue: 45 }
+                { exerciseType: "Strength", exerciseValue: 45 },
+                { exerciseType: "Bulk", exerciseValue: 20 },
+                { exerciseType: "PushUps", exerciseValue: 59 },
+                { exerciseType: "PullUps", exerciseValue: 70 },
             ]
         },
         activityFocus: {
             activityData: [
                 { activityYear: 2023, activityMonth: 11, activityValue: 20 },
                 { activityYear: 2023, activityMonth: 12, activityValue: 25 },
-                { activityYear: 2024, activityMonth: 1, activityValue: 30 }
+                { activityYear: 2024, activityMonth: 1, activityValue: 30 },
+                { activityYear: 2024, activityMonth: 2, activityValue: 13 },
+                { activityYear: 2024, activityMonth: 3, activityValue: 10 },
+                { activityYear: 2024, activityMonth: 4, activityValue: 17 },
+                { activityYear: 2024, activityMonth: 5, activityValue: 23 },
+                { activityYear: 2024, activityMonth: 6, activityValue: 44 },
             ]
         },
         professionalId: "665212b08826ea28ba424ea7",
         progress: {
             progressData: [
                 {
-                    rankId: "6652151aec3ddb58a17e3675",
+                    rank: "6652151aec3ddb58a17e3675",
                     progressSubData: [
-                        { exerciseId: 1, completed: true },
-                        { exerciseId: 2, completed: false }
+                        { exercise: 1, completed: true },
+                        { exercise: 2, completed: false }
                     ]
                 }
             ]
         }
-    },
-    {
-        userId: "665212b08826ea28ba424ea8",
-        rank: "6652151aec3ddb58a17e3678",
-        finishedExercises: 20,
-        hoursSpent: 70,
-        exercisesFocus: {
-            exercisesData: [
-                { exerciseType: "Flexibility", exerciseValue: 20 },
-                { exerciseType: "Endurance", exerciseValue: 60 }
-            ]
-        },
-        activityFocus: {
-            activityData: [
-                { activityYear: 2023, activityMonth: 11, activityValue: 15 },
-                { activityYear: 2023, activityMonth: 12, activityValue: 20 },
-                { activityYear: 2024, activityMonth: 1, activityValue: 25 }
-            ]
-        },
-        professionalId: "665212b08826ea28ba424ea8",
-        progress: {
-            progressData: [
-                {
-                    rankId: "6652151aec3ddb58a17e3678",
-                    progressSubData: [
-                        { exerciseId: 3, completed: true },
-                        { exerciseId: 4, completed: true }
-                    ]
-                }
-            ]
-        }
-    },
-    // Add more student objects here
+    }
 ];
 
 
@@ -208,7 +184,7 @@ mongoose.connect('mongodb://localhost:27017/TALKEASE', { useNewUrlParser: true, 
     .then(() => {
         console.log('Connected to MongoDB');
         // Insert sample users into the database
-        return Rank.insertMany(ranksData);
+        return Student.insertMany(studentsData);
     })
     .then(() => {
         console.log('Sample users inserted successfully');

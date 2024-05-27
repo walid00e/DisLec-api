@@ -24,12 +24,12 @@ const exerciseFocusSchema = new Schema({
 
 // Embedded Progress Schema
 const progressSubUnitSchema = new Schema({
-    exerciseId: { type: Number, required: true },
+    exercise: { type: Number, required: true },
     completed: { type: Boolean, required: true }
 });
 
 const progressUnitSchema = new Schema({
-    rankId: { type: Schema.Types.ObjectId, ref: 'Rank' },
+    rank: { type: Schema.Types.ObjectId, ref: 'Rank' },
     progressSubData: [progressSubUnitSchema]
 });
 
@@ -39,7 +39,7 @@ const progressSchema = new Schema({
 
 // Student Schema with Embedded Data
 const studentSchema = new Schema({
-    userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     rank: { type: Schema.Types.ObjectId, ref: 'Rank' },
     finishedExercises: { type: Number, default: 0 },
     hoursSpent: { type: Number, default: 0 },
