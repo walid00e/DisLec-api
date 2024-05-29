@@ -10,9 +10,6 @@ const studentsByUserId = [
             if (!student) {
                 return apiResponse.successResponseWithData(res, "Student not found", null);
             }
-            if (student.user.toString() !== req.user._id) {
-                return apiResponse.unauthorizedResponse(res, "You are not authorized to view this student's data.");
-            }
             return apiResponse.successResponseWithData(res, "Student found", student);
         } catch (error) {
             return apiResponse.ErrorResponse(res, error);

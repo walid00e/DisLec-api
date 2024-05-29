@@ -6,11 +6,11 @@ const rankDetails = [
     auth,
     async (req, res) => {
         try {
-            const student = await Rank.findOne({_id: req.params.id},);
-            if (!student) {
+            const rank = await Rank.findOne({_id: req.params.id},);
+            if (!rank) {
                 return apiResponse.successResponseWithData(res, "Rank not found", null);
             }
-            return apiResponse.successResponseWithData(res, "Rank found", student);
+            return apiResponse.successResponseWithData(res, "Rank found", rank);
         } catch (error) {
             return apiResponse.ErrorResponse(res, error);
         }

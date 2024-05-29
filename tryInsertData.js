@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const User = require('./models/UserModel'); // Make sure to adjust the path to your User model
 const Rank = require('./models/RankModel');
 const Student = require('./models/StudentModel');
+const Essay = require('./models/EssayModel');
+const Professional = require('./Models/ProfessionalModel');
 
 const users = [
     {
@@ -13,7 +15,8 @@ const users = [
         joinDate: new Date("2020-01-01"),
         sex: "M",
         password: "password123",
-        profilePicture: "path/to/profilePic1.jpg"
+        profilePicture: "path/to/profilePic1.jpg",
+        isPro: false
     },
     {
         firstName: "Jane",
@@ -24,7 +27,8 @@ const users = [
         joinDate: new Date("2019-05-15"),
         sex: "F",
         password: "password456",
-        profilePicture: "path/to/profilePic2.jpg"
+        profilePicture: "path/to/profilePic2.jpg",
+        isPro: false
     },
     {
         firstName: "Alice",
@@ -35,7 +39,8 @@ const users = [
         joinDate: new Date("2021-07-20"),
         sex: "F",
         password: "password789",
-        profilePicture: "path/to/profilePic3.jpg"
+        profilePicture: "path/to/profilePic3.jpg",
+        isPro: true
     },
     {
         firstName: "Bob",
@@ -46,7 +51,8 @@ const users = [
         joinDate: new Date("2018-11-30"),
         sex: "M",
         password: "password101",
-        profilePicture: "path/to/profilePic4.jpg"
+        profilePicture: "path/to/profilePic4.jpg",
+        isPro: false
     },
     {
         firstName: "Charlie",
@@ -57,7 +63,8 @@ const users = [
         joinDate: new Date("2022-03-25"),
         sex: "M",
         password: "password202",
-        profilePicture: "path/to/profilePic5.jpg"
+        profilePicture: "path/to/profilePic5.jpg",
+        isPro: false
     }
 ];
 
@@ -178,13 +185,32 @@ const studentsData = [
     }
 ];
 
+const essay = [{
+    student: "66536927801e903d05158001",
+    rank: "66526404ac1ff77e0419e27a",
+    exercise: "66526404ac1ff77e0419e27c",
+    duration: 435,
+    date: Date.now(),
+    content: "1716933378935-videoplayback.mp4"
+}];
+
+const professional = [{
+    user: "66568a98ab181f5ffb5c79b3",
+    patientsList: [],
+    analysedRecord: 10,
+    newRecord: 19,
+    liveSession: 2,
+    essayToReview: "",
+    reviewedEssay: ""
+}];
+
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/TALKEASE', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to MongoDB');
         // Insert sample users into the database
-        return Student.insertMany(studentsData);
+        return Professional.insertMany(professional);
     })
     .then(() => {
         console.log('Sample users inserted successfully');

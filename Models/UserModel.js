@@ -10,7 +10,8 @@ const userSchema = new Schema({
     joinDate: { type: Date, default: Date.now },
     sex: { type: String, required: true },
     password: { type: String, required: true },
-    profilePicture: { type: String }
+    profilePicture: { type: String },
+    isPro: { type: Boolean, required: true}
 });
 
 module.exports = mongoose.model('user', userSchema);
